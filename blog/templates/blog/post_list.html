@@ -6,17 +6,14 @@
         <div>
             <h1><a href="">Blog Pauliny</a></h1>
         </div>
-
-        <div>
-            <p>Opublikowany: 27.02.2016, 14:28</p>
-            <h2><a href="">Mój pierwszy post</a></h2>
-            <p>Philosophia magistra vitae est.</p>
-        </div>
-
-        <div>
-            <p>Opublikowany: 27.02.2016, 14:30</p>
-            <h2><a href="">Mój drugi post</a></h2>
-            <p>Fajnie jest na Django.</p>
+<div>
+     {% for post in posts %}
+	 <div>
+	 <p> published: {{ post.published_date}}</p>
+	 <h1> <a href="">{{post.title}}</a></h1>
+	 <p>{{ post.text|linebreaks}}</p>
+	 </div>
+    {% endfor %}
         </div>
     </body>
 </html>
